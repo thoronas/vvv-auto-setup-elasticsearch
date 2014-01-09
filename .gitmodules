@@ -1,0 +1,3 @@
+[submodule "src/plugins/searchpress"]
+	path = src/plugins/searchpress
+	url = https://thoronas@github.com/alleyinteractive/SearchPress.git
