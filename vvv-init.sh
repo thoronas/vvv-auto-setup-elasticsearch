@@ -57,8 +57,13 @@ echo "$site_name is now set up!";
 echo "installing java"
 sudo apt-get install openjdk-7-jre-headless -y
 
-wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.9.deb
-sudo dpkg -i elasticsearch-0.90.9.deb
+if [ ! -d /usr/share/elasticsearch ]
+	then
+	wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.9.deb
+	sudo dpkg -i elasticsearch-0.90.9.deb
+	rm  elasticsearch*
+fi
+
 # sudo service elasticsearch start
 
 # wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.9.zip
@@ -66,3 +71,4 @@ sudo dpkg -i elasticsearch-0.90.9.deb
 # rm elasticsearch*.zip
 # mv elasticsearch* elasticsearch
 
+	
