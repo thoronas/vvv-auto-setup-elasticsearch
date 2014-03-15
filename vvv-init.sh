@@ -59,7 +59,8 @@ sudo apt-get install openjdk-7-jre-headless -y
 
 if [ ! -d /usr/share/elasticsearch ]
 	then
-	wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.9.deb
+	wget `wget -q -O- elasticsearch.org/download | grep -i -o -m 1 'https://.*\.zip'`
+	# wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.9.deb
 	sudo dpkg -i elasticsearch-0.90.9.deb
 	rm  elasticsearch*
 fi
